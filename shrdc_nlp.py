@@ -4,6 +4,8 @@
 
 import os 
 import re
+import json
+import pickle 
 import datetime 
 import numpy as np
 import pandas as pd
@@ -152,8 +154,8 @@ print(cr)
 # %tensorboard --logdir logs_rev
 
 # Model Saving
-import json
 
+# Tokenizer
 TOKENIZER_SAVE_PATH = os.path.join(os.getcwd(),'sample_data','Models',
                                    'tokenizer.json')
 token_json = tokenizer.to_json()
@@ -161,8 +163,6 @@ with open(TOKENIZER_SAVE_PATH,'w') as file:
   json.dump(token_json,file)
 
 # OHE 
-import pickle 
-
 OHE_SAVE_PATH = os.path.join(os.getcwd(),'sample_data','Models','ohe.pkl')
 with open(OHE_SAVE_PATH,'wb') as file:
   pickle.dump(ohe,file)
